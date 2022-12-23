@@ -67,11 +67,11 @@
 
     {{{body}}}
 
-    <footer class="gh-foot gh-outer">
+    <footer class="gh-foot gh-outer" style="padding-bottom: 80px">
         <div class="gh-foot-inner gh-inner">
             {{#if @site.members_enabled}}
             {{#unless @member}}
-                <section class="gh-subscribe">
+                <section class="gh-subscribe" style="width: 100%; white-space: normal">
                     <h3 class="gh-subscribe-title">Subscribe to {{@site.title}}</h3>
                     {{#if @custom.email_signup_text}}
                         <div class="gh-subscribe-description">{{@custom.email_signup_text}}</div>
@@ -85,9 +85,9 @@
                 {{navigation type="secondary"}}
             </nav>
 
-            <div class="gh-copyright">
+            <div class="gh-copyright" style="margin: 0">
                 {{#unless @custom.footer_text}}
-                    {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+                    {{@site.title}} © {{date format="YYYY"}}.
                 {{else}}
                     {{@custom.footer_text}}
                 {{/unless}}

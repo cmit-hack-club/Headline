@@ -1,0 +1,30 @@
+{{!< default}}
+
+<main class="gh-main gh-outer">
+  <div class="gh-inner">
+
+    {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+      <div class="post-feed" style="display: grid;grid-template-columns: 1fr 1fr;grid-column-gap: 3em;">
+        {{#foreach authors}}
+          <article class="post-card {{#unless profile_image}} no-image{{/unless}}" style="border-radius: 15px;background-color: #ebebeb;padding: 2em">
+            {{#if profile_image}}
+              <a class="post-card-image-link" href="{{url}}">
+                <img class="post-card-image" src="{{profile_image}}" style="border-radius: 100%;width: 10ch;margin: auto;"/>
+              </a>
+            {{/if}}
+            <div class="post-card-content" style="text-align: center;margin-top: 1em">
+              <a class="post-card-content-link" href="{{url}}">
+                <header class="post-card-header">
+                  <h2 class="post-card-title">{{name}}</h2>
+                </header>
+                <section class="post-card-excerpt">
+                  <p>{{bio}}</p>
+                </section>
+              </a>
+            </div>
+          </article>
+        {{/foreach}}
+      </div>
+    {{/get}}
+  </div>
+</main>
